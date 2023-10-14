@@ -13,7 +13,7 @@ export async function initChatbot(id: string): Promise<void> {
     return;
   }
 
-  const res = await fetch(`https://app.createchatbot.ai/api/v1/public/chatbots/${id}`);
+  const res = await fetch(`http://localhost:3000/api/v1/public/chatbots/${id}`);
   const chatbot = await res.json();
 
   session.chatbot = chatbot;

@@ -1,6 +1,6 @@
 import { ComponentIds } from '../../config/component-ids';
+import { Events } from '../../config/events';
 import { SessionKey } from '../../config/session-key';
-import { toggleChat } from '../../services/chatbot/toggle-chat';
 import { getSession } from '../../services/session/get-session';
 import { ChatBubble } from '../chat-bubble';
 import { ChevronDown } from '../chevron-down';
@@ -21,7 +21,7 @@ export function Toggle() {
     session.isOpen = !session.isOpen;
     session.showHints = false;
     sessionStorage.setItem(SessionKey, JSON.stringify(session));
-    toggleChat();
+    window.dispatchEvent(new Event(Events.Toggled));
   }
 
   const toggle = document.createElement('div');
