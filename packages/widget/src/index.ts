@@ -1,3 +1,4 @@
+import { Chat } from './components/chat';
 import { ChatBubble } from './components/chat-bubble';
 import { ChevronDown } from './components/chevron-down';
 import { Hints } from './components/hints';
@@ -15,6 +16,7 @@ export default function Chatbot({ id }: ChatbotProps) {
   document.addEventListener('DOMContentLoaded', async function() {
     await initChatbot(id);
 
+    Chat();
     Hints();
     Toggle();
   });
@@ -25,11 +27,13 @@ export default function Chatbot({ id }: ChatbotProps) {
     
     const toggle = document.getElementById(ComponentIds.Toggle)!
     const hints = document.getElementById(ComponentIds.Hints)!;
+    const chat = document.getElementById(ComponentIds.Chat)!
 
     toggle.innerHTML = session.isOpen
       ? ChevronDown(session.chatbot.textColor)
       : ChatBubble(session.chatbot.textColor);
 
     hints.style.visibility = session.showHints ? 'visible' : 'hidden';
+    chat.style.visibility = session.isOpen ? 'visible' : 'hidden';
   });
 }
