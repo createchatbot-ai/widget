@@ -13,7 +13,12 @@ export function Chat() {
   chat.classList.add(styles.chat);
   chat.style.visibility = session.isOpen ? 'visible' : 'hidden';
 
-  chat.innerText = 'Chat comes here...';
+  const chatbotId = session.chatbot.id;
+  const iframe = document.createElement('iframe');
+  iframe.classList.add(styles.chatFrame);
+  iframe.src = `http://localhost:3000/chat/${chatbotId}`;
+
+  chat.appendChild(iframe);
 
   const body = document.body;
   body.appendChild(chat);
