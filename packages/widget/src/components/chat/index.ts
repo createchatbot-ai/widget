@@ -16,7 +16,7 @@ export function Chat() {
   const chatbotId = session.chatbot.id;
   const iframe = document.createElement('iframe');
   iframe.classList.add(styles.chatFrame);
-  iframe.src = `http://localhost:3000/chat/${chatbotId}`;
+  iframe.src = `https://app.createchatbot.ai/chat/${chatbotId}`;
 
   chat.appendChild(iframe);
 
