@@ -2,6 +2,7 @@ import terser from '@rollup/plugin-terser';
 import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer';
 
 export default {
   input: './src/index.ts',
@@ -22,6 +23,12 @@ export default {
   plugins: [
     json(),
     typescript(),
-    postcss(),
+    postcss({
+      extract: false,
+      writeDefinitions: true,
+      modules: true,
+      namedExports: true,
+      plugins: [autoprefixer()]
+    }),
   ],
 };
