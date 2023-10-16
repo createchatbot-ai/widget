@@ -12,7 +12,9 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
     "css-loader": "^6.8.1",
+    "rollup": "^4.1.4",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
