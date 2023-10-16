@@ -9,7 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "rollup": "rollup -c"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
