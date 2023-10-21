@@ -6,56 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface ChatbotWrapper {
+        "id": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLChatbotWrapperElement extends Components.ChatbotWrapper, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLChatbotWrapperElement: {
+        prototype: HTMLChatbotWrapperElement;
+        new (): HTMLChatbotWrapperElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "chatbot-wrapper": HTMLChatbotWrapperElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface ChatbotWrapper {
+        "id"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "chatbot-wrapper": ChatbotWrapper;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "chatbot-wrapper": LocalJSX.ChatbotWrapper & JSXBase.HTMLAttributes<HTMLChatbotWrapperElement>;
         }
     }
 }
