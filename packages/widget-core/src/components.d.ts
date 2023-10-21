@@ -5,9 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Chatbot } from "./models/chatbot";
+export { Chatbot } from "./models/chatbot";
 export namespace Components {
     interface ChatbotWrapper {
         "chatbotId": string;
+    }
+    interface ToggleButton {
+        "chatbot": Chatbot;
     }
 }
 declare global {
@@ -17,16 +22,27 @@ declare global {
         prototype: HTMLChatbotWrapperElement;
         new (): HTMLChatbotWrapperElement;
     };
+    interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
+    }
+    var HTMLToggleButtonElement: {
+        prototype: HTMLToggleButtonElement;
+        new (): HTMLToggleButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "chatbot-wrapper": HTMLChatbotWrapperElement;
+        "toggle-button": HTMLToggleButtonElement;
     }
 }
 declare namespace LocalJSX {
     interface ChatbotWrapper {
         "chatbotId"?: string;
     }
+    interface ToggleButton {
+        "chatbot"?: Chatbot;
+    }
     interface IntrinsicElements {
         "chatbot-wrapper": ChatbotWrapper;
+        "toggle-button": ToggleButton;
     }
 }
 export { LocalJSX as JSX };
@@ -34,6 +50,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "chatbot-wrapper": LocalJSX.ChatbotWrapper & JSXBase.HTMLAttributes<HTMLChatbotWrapperElement>;
+            "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
         }
     }
 }

@@ -21,7 +21,9 @@ export class ChatbotWrapper {
     const chatbot: Chatbot = getSession().chatbot;
 
     if (chatbot) {
-      return <div>Chatbot for {chatbot.name} comes here!</div>
+      return (
+        <toggle-button chatbot={chatbot} />
+      );
     }
   }
 }
