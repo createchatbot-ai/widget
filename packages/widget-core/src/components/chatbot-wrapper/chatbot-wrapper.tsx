@@ -6,9 +6,9 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class ChatbotWrapper {
-  @Prop() id: string;
+  @Prop() chatbotId: string;
 
   render() {
-    return <div>Chatbot for {this.id} comes here!</div>
+    return <div>Chatbot for {this.chatbotId} comes here!</div>
   }
 }

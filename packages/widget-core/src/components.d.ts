@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ChatbotWrapper {
-        "id": string;
+        "chatbotId": string;
     }
 }
 declare global {
@@ -23,7 +23,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ChatbotWrapper {
-        "id"?: string;
+        "chatbotId"?: string;
     }
     interface IntrinsicElements {
         "chatbot-wrapper": ChatbotWrapper;
