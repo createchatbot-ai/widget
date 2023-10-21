@@ -1,4 +1,8 @@
 import { Component, Prop, h } from '@stencil/core';
+import { initSession } from '../../services/session/init-session';
+import { initChatbot } from '../../services/chatbot/init-chatbot';
+import { getSession } from '../../services/session/get-session';
+import { Chatbot } from '../../models/chatbot';
 
 @Component({
   tag: 'chatbot-wrapper',
@@ -8,7 +12,16 @@ import { Component, Prop, h } from '@stencil/core';
 export class ChatbotWrapper {
   @Prop() chatbotId: string;
 
+  async componentWillLoad() {
+    initSession(this.chatbotId);
+    await initChatbot(this.chatbotId);
+  }
+
   render() {
-    return <div>Chatbot for {this.chatbotId} comes here!</div>
+    const chatbot: Chatbot = getSession().chatbot;
+
+    if (chatbot) {
+      return <div>Chatbot for {chatbot.name} comes here!</div>
+    }
   }
 }
