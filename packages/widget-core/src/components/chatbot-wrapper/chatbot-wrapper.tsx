@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import { initSession } from '../../services/session/init-session';
 import { initChatbot } from '../../services/chatbot/init-chatbot';
 import { getSession } from '../../services/session/get-session';
@@ -12,6 +12,8 @@ import { Chatbot } from '../../models/chatbot';
 export class ChatbotWrapper {
   @Prop() chatbotId: string;
 
+  @State() isOpen: boolean = false;
+
   async componentWillLoad() {
     initSession(this.chatbotId);
     await initChatbot(this.chatbotId);
@@ -22,7 +24,10 @@ export class ChatbotWrapper {
 
     if (chatbot) {
       return (
-        <toggle-button chatbot={chatbot} />
+        <toggle-button
+          chatbot={chatbot}
+          isOpen={this.isOpen}
+        />
       );
     }
   }

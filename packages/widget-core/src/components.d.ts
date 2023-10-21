@@ -14,8 +14,12 @@ export namespace Components {
     interface ChatbotWrapper {
         "chatbotId": string;
     }
+    interface ChevronDown {
+        "stroke": string;
+    }
     interface ToggleButton {
         "chatbot": Chatbot;
+        "isOpen": boolean;
     }
 }
 declare global {
@@ -31,6 +35,12 @@ declare global {
         prototype: HTMLChatbotWrapperElement;
         new (): HTMLChatbotWrapperElement;
     };
+    interface HTMLChevronDownElement extends Components.ChevronDown, HTMLStencilElement {
+    }
+    var HTMLChevronDownElement: {
+        prototype: HTMLChevronDownElement;
+        new (): HTMLChevronDownElement;
+    };
     interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
     }
     var HTMLToggleButtonElement: {
@@ -40,6 +50,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "chat-bubble": HTMLChatBubbleElement;
         "chatbot-wrapper": HTMLChatbotWrapperElement;
+        "chevron-down": HTMLChevronDownElement;
         "toggle-button": HTMLToggleButtonElement;
     }
 }
@@ -50,12 +61,17 @@ declare namespace LocalJSX {
     interface ChatbotWrapper {
         "chatbotId"?: string;
     }
+    interface ChevronDown {
+        "stroke"?: string;
+    }
     interface ToggleButton {
         "chatbot"?: Chatbot;
+        "isOpen"?: boolean;
     }
     interface IntrinsicElements {
         "chat-bubble": ChatBubble;
         "chatbot-wrapper": ChatbotWrapper;
+        "chevron-down": ChevronDown;
         "toggle-button": ToggleButton;
     }
 }
@@ -65,6 +81,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "chat-bubble": LocalJSX.ChatBubble & JSXBase.HTMLAttributes<HTMLChatBubbleElement>;
             "chatbot-wrapper": LocalJSX.ChatbotWrapper & JSXBase.HTMLAttributes<HTMLChatbotWrapperElement>;
+            "chevron-down": LocalJSX.ChevronDown & JSXBase.HTMLAttributes<HTMLChevronDownElement>;
             "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
         }
     }

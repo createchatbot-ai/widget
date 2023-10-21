@@ -9,6 +9,8 @@ import { Chatbot } from '../../models/chatbot';
 export class ToggleButton {
   @Prop() chatbot: Chatbot;
 
+  @Prop({ mutable: true }) isOpen: boolean;
+
   render() {
     return (
       <div
@@ -16,9 +18,12 @@ export class ToggleButton {
         style={{
           background: this.chatbot.bgColor
         }}
-      >
-        <chat-bubble fill={this.chatbot.textColor} />
-      </div>
+        onClick={() => this.isOpen = !this.isOpen}
+      >{
+        this.isOpen
+          ? <chevron-down stroke={this.chatbot.textColor} />
+          : <chat-bubble fill={this.chatbot.textColor} />
+      }</div>
     );
   }
 }
