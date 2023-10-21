@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Fragment, Prop, State, h } from '@stencil/core';
 import { initSession } from '../../services/session/init-session';
 import { initChatbot } from '../../services/chatbot/init-chatbot';
 import { getSession } from '../../services/session/get-session';
@@ -24,10 +24,16 @@ export class ChatbotWrapper {
 
     if (chatbot) {
       return (
-        <toggle-button
-          chatbot={chatbot}
-          isOpen={this.isOpen}
-        />
+        <Fragment>
+          <greeting-messages
+            messages={chatbot.messages}
+          />
+          <toggle-button
+            bgColor={chatbot.bgColor}
+            fgColor={chatbot.textColor}
+            isOpen={this.isOpen}
+          />
+        </Fragment>
       );
     }
   }

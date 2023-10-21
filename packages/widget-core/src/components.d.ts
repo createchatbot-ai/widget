@@ -5,8 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Chatbot } from "./models/chatbot";
-export { Chatbot } from "./models/chatbot";
 export namespace Components {
     interface ChatBubble {
         "fill": string;
@@ -17,9 +15,17 @@ export namespace Components {
     interface ChevronDown {
         "stroke": string;
     }
+    interface GreetingMessages {
+        "messages": string[];
+    }
     interface ToggleButton {
-        "chatbot": Chatbot;
+        "bgColor": string;
+        "fgColor": string;
         "isOpen": boolean;
+    }
+    interface XMark {
+        "fill": string;
+        "size": string;
     }
 }
 declare global {
@@ -41,17 +47,31 @@ declare global {
         prototype: HTMLChevronDownElement;
         new (): HTMLChevronDownElement;
     };
+    interface HTMLGreetingMessagesElement extends Components.GreetingMessages, HTMLStencilElement {
+    }
+    var HTMLGreetingMessagesElement: {
+        prototype: HTMLGreetingMessagesElement;
+        new (): HTMLGreetingMessagesElement;
+    };
     interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
     }
     var HTMLToggleButtonElement: {
         prototype: HTMLToggleButtonElement;
         new (): HTMLToggleButtonElement;
     };
+    interface HTMLXMarkElement extends Components.XMark, HTMLStencilElement {
+    }
+    var HTMLXMarkElement: {
+        prototype: HTMLXMarkElement;
+        new (): HTMLXMarkElement;
+    };
     interface HTMLElementTagNameMap {
         "chat-bubble": HTMLChatBubbleElement;
         "chatbot-wrapper": HTMLChatbotWrapperElement;
         "chevron-down": HTMLChevronDownElement;
+        "greeting-messages": HTMLGreetingMessagesElement;
         "toggle-button": HTMLToggleButtonElement;
+        "x-mark": HTMLXMarkElement;
     }
 }
 declare namespace LocalJSX {
@@ -64,15 +84,25 @@ declare namespace LocalJSX {
     interface ChevronDown {
         "stroke"?: string;
     }
+    interface GreetingMessages {
+        "messages"?: string[];
+    }
     interface ToggleButton {
-        "chatbot"?: Chatbot;
+        "bgColor"?: string;
+        "fgColor"?: string;
         "isOpen"?: boolean;
+    }
+    interface XMark {
+        "fill"?: string;
+        "size"?: string;
     }
     interface IntrinsicElements {
         "chat-bubble": ChatBubble;
         "chatbot-wrapper": ChatbotWrapper;
         "chevron-down": ChevronDown;
+        "greeting-messages": GreetingMessages;
         "toggle-button": ToggleButton;
+        "x-mark": XMark;
     }
 }
 export { LocalJSX as JSX };
@@ -82,7 +112,9 @@ declare module "@stencil/core" {
             "chat-bubble": LocalJSX.ChatBubble & JSXBase.HTMLAttributes<HTMLChatBubbleElement>;
             "chatbot-wrapper": LocalJSX.ChatbotWrapper & JSXBase.HTMLAttributes<HTMLChatbotWrapperElement>;
             "chevron-down": LocalJSX.ChevronDown & JSXBase.HTMLAttributes<HTMLChevronDownElement>;
+            "greeting-messages": LocalJSX.GreetingMessages & JSXBase.HTMLAttributes<HTMLGreetingMessagesElement>;
             "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
+            "x-mark": LocalJSX.XMark & JSXBase.HTMLAttributes<HTMLXMarkElement>;
         }
     }
 }

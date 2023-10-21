@@ -1,5 +1,4 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Chatbot } from '../../models/chatbot';
 
 @Component({
   tag: 'toggle-button',
@@ -7,7 +6,8 @@ import { Chatbot } from '../../models/chatbot';
   shadow: true,
 })
 export class ToggleButton {
-  @Prop() chatbot: Chatbot;
+  @Prop() bgColor: string;
+  @Prop() fgColor: string;
 
   @Prop({ mutable: true }) isOpen: boolean;
 
@@ -16,13 +16,13 @@ export class ToggleButton {
       <div
         class='toggle'
         style={{
-          background: this.chatbot.bgColor
+          background: this.bgColor
         }}
         onClick={() => this.isOpen = !this.isOpen}
       >{
         this.isOpen
-          ? <chevron-down stroke={this.chatbot.textColor} />
-          : <chat-bubble fill={this.chatbot.textColor} />
+          ? <chevron-down stroke={this.fgColor} />
+          : <chat-bubble fill={this.fgColor} />
       }</div>
     );
   }
