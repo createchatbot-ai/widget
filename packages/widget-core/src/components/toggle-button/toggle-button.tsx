@@ -17,7 +17,7 @@ export class ToggleButton {
           background: this.chatbot.bgColor
         }}
       >
-        Chatbot
+        <chat-bubble fill={this.chatbot.textColor} />
       </div>
     );
   }
