@@ -11,9 +11,6 @@ import { initChatbot } from './services/chatbot/init-chatbot';
 import { getSession } from './services/session/get-session';
 import { initSession } from './services/session/init-session';
 
-/**
- * @deprecated use "core" pkg instead
- */
 export default function Chatbot({ id }: ChatbotProps) {
   initSession(id);
 
