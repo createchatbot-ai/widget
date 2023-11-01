@@ -23,6 +23,9 @@ export class Chatbot {
     if (chatbot) {      
       return (
         <Fragment>
+          <cc-chat
+            chatbotId={chatbot.id}
+          />
           <cc-hints
             messages={chatbot.messages}
           />

@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CcChat {
+        "chatbotId": string;
+    }
     interface CcChatBubble {
         "fill": string;
     }
@@ -28,6 +31,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCcChatElement extends Components.CcChat, HTMLStencilElement {
+    }
+    var HTMLCcChatElement: {
+        prototype: HTMLCcChatElement;
+        new (): HTMLCcChatElement;
+    };
     interface HTMLCcChatBubbleElement extends Components.CcChatBubble, HTMLStencilElement {
     }
     var HTMLCcChatBubbleElement: {
@@ -65,6 +74,7 @@ declare global {
         new (): HTMLCcXMarkElement;
     };
     interface HTMLElementTagNameMap {
+        "cc-chat": HTMLCcChatElement;
         "cc-chat-bubble": HTMLCcChatBubbleElement;
         "cc-chatbot": HTMLCcChatbotElement;
         "cc-chevron-down": HTMLCcChevronDownElement;
@@ -74,6 +84,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface CcChat {
+        "chatbotId"?: string;
+    }
     interface CcChatBubble {
         "fill"?: string;
     }
@@ -95,6 +108,7 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface IntrinsicElements {
+        "cc-chat": CcChat;
         "cc-chat-bubble": CcChatBubble;
         "cc-chatbot": CcChatbot;
         "cc-chevron-down": CcChevronDown;
@@ -107,6 +121,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cc-chat": LocalJSX.CcChat & JSXBase.HTMLAttributes<HTMLCcChatElement>;
             "cc-chat-bubble": LocalJSX.CcChatBubble & JSXBase.HTMLAttributes<HTMLCcChatBubbleElement>;
             "cc-chatbot": LocalJSX.CcChatbot & JSXBase.HTMLAttributes<HTMLCcChatbotElement>;
             "cc-chevron-down": LocalJSX.CcChevronDown & JSXBase.HTMLAttributes<HTMLCcChevronDownElement>;
