@@ -6,7 +6,7 @@ import { Chatbot as ChatbotModel } from '../../models/chatbot';
 import state from '../../store';
 
 @Component({
-  tag: 'cc-chatbot',
+  tag: 'create-chatbot',
   styleUrl: 'chatbot.css',
   shadow: true,
 })
