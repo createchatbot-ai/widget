@@ -1,8 +1,9 @@
-import { Component, Fragment, Prop, h } from '@stencil/core';
+import { Component, Fragment, Listen, Prop, h } from '@stencil/core';
 import { initSession } from '../../services/session/init-session';
 import { initChatbot } from '../../services/chatbot/init-chatbot';
 import { getSession } from '../../services/session/get-session';
 import { Chatbot as ChatbotModel } from '../../models/chatbot';
+import state from '../../store';
 
 @Component({
   tag: 'cc-chatbot',
@@ -15,6 +16,13 @@ export class Chatbot {
   async componentWillLoad() {
     initSession(this.chatbotId);
     await initChatbot(this.chatbotId);
+  }
+
+  @Listen('message', { target: 'window' })
+  closeChat(event: MessageEvent) {
+    if (event.data === 'ccai-closed') {
+      state.isOpen = false;
+    }
   }
 
   render() {
