@@ -23,6 +23,8 @@ export class ChatbotWrapper {
     const chatbot: Chatbot = getSession().chatbot;
 
     if (chatbot) {
+      console.log(chatbot);
+      
       return (
         <Fragment>
           <greeting-messages

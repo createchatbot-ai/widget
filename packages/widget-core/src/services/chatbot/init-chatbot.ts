@@ -13,9 +13,12 @@ export async function initChatbot(id: string): Promise<void> {
     return;
   }
 
-  const res = await fetch(`https://app.createchatbot.ai/api/v1/public/chatbots/${id}`);
-  const chatbot = await res.json();
-
-  session.chatbot = chatbot;
-  sessionStorage.setItem(SessionKey, JSON.stringify(session));
+  try {
+    const res = await fetch(`https://app.createchatbot.ai/api/v1/public/chatbots/${id}`);
+    const chatbot = await res.json();
+    session.chatbot = chatbot;
+    sessionStorage.setItem(SessionKey, JSON.stringify(session));
+  } catch (error) {
+    console.error('No chatbot found with this ID');
+  }
 }
