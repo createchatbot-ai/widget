@@ -12,6 +12,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  buildEs5: 'prod',
   testing: {
     browserHeadless: "new",
   },
