@@ -1,5 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import state from '../../store';
+import { disableHints } from '../../services/hints/disable-hints';
 
 @Component({
   tag: 'cc-hints',
@@ -18,7 +19,10 @@ export class Hints {
         }}
       >
         <div class='hints-container'>
-          <div class='close'>
+          <div
+            class='close'
+            onClick={disableHints}
+          >
             <cc-x-mark
               size='15px'
               fill='#2D3748'
