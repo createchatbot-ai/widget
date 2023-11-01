@@ -1,11 +1,11 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'greeting-messages',
-  styleUrl: 'greeting-messages.css',
+  tag: 'cc-hints',
+  styleUrl: 'hints.css',
   shadow: true,
 })
-export class GreetingMessages {
+export class Hints {
   @Prop() messages: string[];
 
   render() {
@@ -13,7 +13,7 @@ export class GreetingMessages {
       <div class='hints'>
         <div class='hints-container'>
           <div class='close'>
-            <x-mark
+            <cc-x-mark
               size='15px'
               fill='#2D3748'
             />

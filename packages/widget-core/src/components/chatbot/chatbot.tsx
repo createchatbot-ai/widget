@@ -2,14 +2,14 @@ import { Component, Fragment, Prop, State, h } from '@stencil/core';
 import { initSession } from '../../services/session/init-session';
 import { initChatbot } from '../../services/chatbot/init-chatbot';
 import { getSession } from '../../services/session/get-session';
-import { Chatbot } from '../../models/chatbot';
+import { Chatbot as ChatbotModel } from '../../models/chatbot';
 
 @Component({
-  tag: 'chatbot-wrapper',
-  styleUrl: 'chatbot-wrapper.css',
+  tag: 'cc-chatbot',
+  styleUrl: 'chatbot.css',
   shadow: true,
 })
-export class ChatbotWrapper {
+export class Chatbot {
   @Prop() chatbotId: string;
 
   @State() isOpen: boolean = false;
@@ -20,15 +20,15 @@ export class ChatbotWrapper {
   }
 
   render() {
-    const chatbot: Chatbot = getSession().chatbot;
+    const chatbot: ChatbotModel = getSession().chatbot;
 
     if (chatbot) {      
       return (
         <Fragment>
-          <greeting-messages
+          <cc-hints
             messages={chatbot.messages}
           />
-          <toggle-button
+          <cc-toggle
             bgColor={chatbot.bgColor}
             fgColor={chatbot.textColor}
             isOpen={this.isOpen}

@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'chat-bubble',
+  tag: 'cc-chat-bubble',
   shadow: true,
 })
 export class ChatBubble {

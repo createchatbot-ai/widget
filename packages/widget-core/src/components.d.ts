@@ -6,115 +6,115 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ChatBubble {
+    interface CcChatBubble {
         "fill": string;
     }
-    interface ChatbotWrapper {
+    interface CcChatbot {
         "chatbotId": string;
     }
-    interface ChevronDown {
+    interface CcChevronDown {
         "stroke": string;
     }
-    interface GreetingMessages {
+    interface CcHints {
         "messages": string[];
     }
-    interface ToggleButton {
+    interface CcToggle {
         "bgColor": string;
         "fgColor": string;
         "isOpen": boolean;
     }
-    interface XMark {
+    interface CcXMark {
         "fill": string;
         "size": string;
     }
 }
 declare global {
-    interface HTMLChatBubbleElement extends Components.ChatBubble, HTMLStencilElement {
+    interface HTMLCcChatBubbleElement extends Components.CcChatBubble, HTMLStencilElement {
     }
-    var HTMLChatBubbleElement: {
-        prototype: HTMLChatBubbleElement;
-        new (): HTMLChatBubbleElement;
+    var HTMLCcChatBubbleElement: {
+        prototype: HTMLCcChatBubbleElement;
+        new (): HTMLCcChatBubbleElement;
     };
-    interface HTMLChatbotWrapperElement extends Components.ChatbotWrapper, HTMLStencilElement {
+    interface HTMLCcChatbotElement extends Components.CcChatbot, HTMLStencilElement {
     }
-    var HTMLChatbotWrapperElement: {
-        prototype: HTMLChatbotWrapperElement;
-        new (): HTMLChatbotWrapperElement;
+    var HTMLCcChatbotElement: {
+        prototype: HTMLCcChatbotElement;
+        new (): HTMLCcChatbotElement;
     };
-    interface HTMLChevronDownElement extends Components.ChevronDown, HTMLStencilElement {
+    interface HTMLCcChevronDownElement extends Components.CcChevronDown, HTMLStencilElement {
     }
-    var HTMLChevronDownElement: {
-        prototype: HTMLChevronDownElement;
-        new (): HTMLChevronDownElement;
+    var HTMLCcChevronDownElement: {
+        prototype: HTMLCcChevronDownElement;
+        new (): HTMLCcChevronDownElement;
     };
-    interface HTMLGreetingMessagesElement extends Components.GreetingMessages, HTMLStencilElement {
+    interface HTMLCcHintsElement extends Components.CcHints, HTMLStencilElement {
     }
-    var HTMLGreetingMessagesElement: {
-        prototype: HTMLGreetingMessagesElement;
-        new (): HTMLGreetingMessagesElement;
+    var HTMLCcHintsElement: {
+        prototype: HTMLCcHintsElement;
+        new (): HTMLCcHintsElement;
     };
-    interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
+    interface HTMLCcToggleElement extends Components.CcToggle, HTMLStencilElement {
     }
-    var HTMLToggleButtonElement: {
-        prototype: HTMLToggleButtonElement;
-        new (): HTMLToggleButtonElement;
+    var HTMLCcToggleElement: {
+        prototype: HTMLCcToggleElement;
+        new (): HTMLCcToggleElement;
     };
-    interface HTMLXMarkElement extends Components.XMark, HTMLStencilElement {
+    interface HTMLCcXMarkElement extends Components.CcXMark, HTMLStencilElement {
     }
-    var HTMLXMarkElement: {
-        prototype: HTMLXMarkElement;
-        new (): HTMLXMarkElement;
+    var HTMLCcXMarkElement: {
+        prototype: HTMLCcXMarkElement;
+        new (): HTMLCcXMarkElement;
     };
     interface HTMLElementTagNameMap {
-        "chat-bubble": HTMLChatBubbleElement;
-        "chatbot-wrapper": HTMLChatbotWrapperElement;
-        "chevron-down": HTMLChevronDownElement;
-        "greeting-messages": HTMLGreetingMessagesElement;
-        "toggle-button": HTMLToggleButtonElement;
-        "x-mark": HTMLXMarkElement;
+        "cc-chat-bubble": HTMLCcChatBubbleElement;
+        "cc-chatbot": HTMLCcChatbotElement;
+        "cc-chevron-down": HTMLCcChevronDownElement;
+        "cc-hints": HTMLCcHintsElement;
+        "cc-toggle": HTMLCcToggleElement;
+        "cc-x-mark": HTMLCcXMarkElement;
     }
 }
 declare namespace LocalJSX {
-    interface ChatBubble {
+    interface CcChatBubble {
         "fill"?: string;
     }
-    interface ChatbotWrapper {
+    interface CcChatbot {
         "chatbotId"?: string;
     }
-    interface ChevronDown {
+    interface CcChevronDown {
         "stroke"?: string;
     }
-    interface GreetingMessages {
+    interface CcHints {
         "messages"?: string[];
     }
-    interface ToggleButton {
+    interface CcToggle {
         "bgColor"?: string;
         "fgColor"?: string;
         "isOpen"?: boolean;
     }
-    interface XMark {
+    interface CcXMark {
         "fill"?: string;
         "size"?: string;
     }
     interface IntrinsicElements {
-        "chat-bubble": ChatBubble;
-        "chatbot-wrapper": ChatbotWrapper;
-        "chevron-down": ChevronDown;
-        "greeting-messages": GreetingMessages;
-        "toggle-button": ToggleButton;
-        "x-mark": XMark;
+        "cc-chat-bubble": CcChatBubble;
+        "cc-chatbot": CcChatbot;
+        "cc-chevron-down": CcChevronDown;
+        "cc-hints": CcHints;
+        "cc-toggle": CcToggle;
+        "cc-x-mark": CcXMark;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "chat-bubble": LocalJSX.ChatBubble & JSXBase.HTMLAttributes<HTMLChatBubbleElement>;
-            "chatbot-wrapper": LocalJSX.ChatbotWrapper & JSXBase.HTMLAttributes<HTMLChatbotWrapperElement>;
-            "chevron-down": LocalJSX.ChevronDown & JSXBase.HTMLAttributes<HTMLChevronDownElement>;
-            "greeting-messages": LocalJSX.GreetingMessages & JSXBase.HTMLAttributes<HTMLGreetingMessagesElement>;
-            "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
-            "x-mark": LocalJSX.XMark & JSXBase.HTMLAttributes<HTMLXMarkElement>;
+            "cc-chat-bubble": LocalJSX.CcChatBubble & JSXBase.HTMLAttributes<HTMLCcChatBubbleElement>;
+            "cc-chatbot": LocalJSX.CcChatbot & JSXBase.HTMLAttributes<HTMLCcChatbotElement>;
+            "cc-chevron-down": LocalJSX.CcChevronDown & JSXBase.HTMLAttributes<HTMLCcChevronDownElement>;
+            "cc-hints": LocalJSX.CcHints & JSXBase.HTMLAttributes<HTMLCcHintsElement>;
+            "cc-toggle": LocalJSX.CcToggle & JSXBase.HTMLAttributes<HTMLCcToggleElement>;
+            "cc-x-mark": LocalJSX.CcXMark & JSXBase.HTMLAttributes<HTMLCcXMarkElement>;
         }
     }
 }

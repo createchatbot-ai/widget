@@ -1,11 +1,11 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'toggle-button',
-  styleUrl: 'toggle-button.css',
+  tag: 'cc-toggle',
+  styleUrl: 'toggle.css',
   shadow: true,
 })
-export class ToggleButton {
+export class Toggle {
   @Prop() bgColor: string;
   @Prop() fgColor: string;
 
@@ -21,8 +21,8 @@ export class ToggleButton {
         onClick={() => this.isOpen = !this.isOpen}
       >{
         this.isOpen
-          ? <chevron-down stroke={this.fgColor} />
-          : <chat-bubble fill={this.fgColor} />
+          ? <cc-chevron-down stroke={this.fgColor} />
+          : <cc-chat-bubble fill={this.fgColor} />
       }</div>
     );
   }

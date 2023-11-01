@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'x-mark',
+  tag: 'cc-x-mark',
   shadow: true,
 })
 export class XMark {

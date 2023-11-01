@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'chevron-down',
+  tag: 'cc-chevron-down',
   shadow: true,
 })
 export class ChevronDown {
