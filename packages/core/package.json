@@ -1,7 +1,7 @@
 {
   "name": "@createchatbot/core",
   "version": "1.0.0",
-  "description": "createchatbot.ai Widget (Core)",
+  "description": "createchatbot.ai Web Component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
