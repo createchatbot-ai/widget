@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+import state from '../../store';
 
 @Component({
   tag: 'cc-toggle',
@@ -9,8 +10,6 @@ export class Toggle {
   @Prop() bgColor: string;
   @Prop() fgColor: string;
 
-  @Prop({ mutable: true }) isOpen: boolean;
-
   render() {
     return (
       <div
@@ -18,9 +17,9 @@ export class Toggle {
         style={{
           background: this.bgColor
         }}
-        onClick={() => this.isOpen = !this.isOpen}
+        onClick={() => state.isOpen = !state.isOpen}
       >{
-        this.isOpen
+        state.isOpen
           ? <cc-chevron-down stroke={this.fgColor} />
           : <cc-chat-bubble fill={this.fgColor} />
       }</div>

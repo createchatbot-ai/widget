@@ -1,4 +1,4 @@
-import { Component, Fragment, Prop, State, h } from '@stencil/core';
+import { Component, Fragment, Prop, h } from '@stencil/core';
 import { initSession } from '../../services/session/init-session';
 import { initChatbot } from '../../services/chatbot/init-chatbot';
 import { getSession } from '../../services/session/get-session';
@@ -11,8 +11,6 @@ import { Chatbot as ChatbotModel } from '../../models/chatbot';
 })
 export class Chatbot {
   @Prop() chatbotId: string;
-
-  @State() isOpen: boolean = false;
 
   async componentWillLoad() {
     initSession(this.chatbotId);
@@ -31,7 +29,6 @@ export class Chatbot {
           <cc-toggle
             bgColor={chatbot.bgColor}
             fgColor={chatbot.textColor}
-            isOpen={this.isOpen}
           />
         </Fragment>
       );

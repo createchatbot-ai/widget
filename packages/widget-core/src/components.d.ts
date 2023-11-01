@@ -21,7 +21,6 @@ export namespace Components {
     interface CcToggle {
         "bgColor": string;
         "fgColor": string;
-        "isOpen": boolean;
     }
     interface CcXMark {
         "fill": string;
@@ -90,7 +89,6 @@ declare namespace LocalJSX {
     interface CcToggle {
         "bgColor"?: string;
         "fgColor"?: string;
-        "isOpen"?: boolean;
     }
     interface CcXMark {
         "fill"?: string;
