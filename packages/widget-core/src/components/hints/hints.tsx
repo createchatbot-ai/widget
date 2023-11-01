@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+import state from '../../store';
 
 @Component({
   tag: 'cc-hints',
@@ -10,7 +11,12 @@ export class Hints {
 
   render() {
     return (
-      <div class='hints'>
+      <div
+        class='hints'
+        style={{
+          visibility: state.showHints ? 'visible' : 'hidden'
+        }}
+      >
         <div class='hints-container'>
           <div class='close'>
             <cc-x-mark

@@ -12,5 +12,5 @@
   },
   "include": [
     "./src/**/*"
-  ]
+, "../widget-core/src/services/hints"  ]
 }
