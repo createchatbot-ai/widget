@@ -12,7 +12,7 @@ import { getSession } from './services/session/get-session';
 import { initSession } from './services/session/init-session';
 
 /**
- * @deprecated use widget-core instead
+ * @deprecated use "core" pkg instead
  */
 export default function Chatbot({ id }: ChatbotProps) {
   initSession(id);
