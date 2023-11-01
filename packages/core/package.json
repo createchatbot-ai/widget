@@ -13,6 +13,10 @@
     "type": "git",
     "url": "https://github.com/createchatbot-ai/widget.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "files": [
     "dist/",
     "loader/"
