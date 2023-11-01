@@ -1,0 +1,13 @@
+{
+  "namespace": "@createchatbot",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "lerna": "^7.4.1",
+    "postcss": "^8.4.31",
+    "typescript": "^5.2.2"
+  }
+}
